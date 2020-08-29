@@ -22,7 +22,7 @@ public class ActiveDevices {
                 System.out.println("T");
                 break;
             default:
-                System.out.println("Dank");
+                System.out.println("default");
                 break;
 
         }
