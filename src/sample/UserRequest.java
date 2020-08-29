@@ -20,5 +20,5 @@ public class UserRequest {
         return y;
     }
 
-
+    public int getLumen(){return lumen;}
 }
