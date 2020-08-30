@@ -1,36 +1,53 @@
 package sample;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ActiveDevices {
 
+
     private ArrayList<LightBulb> lightBulbs = new ArrayList<>();
 
-    public ActiveDevices(DeviceCatalog device){
-        switch (device){
-            case LightBulb:
-                LightBulb lightbulb1 = new LightBulb(3000, 10, 10);
-                LightBulb lightBulb2 = new LightBulb(5000, 20, 20);
-                lightBulbs.add(lightbulb1);
-                lightBulbs.add(lightBulb2);
-                System.out.println("L");
-                break;
-            case AlarmClock:
-                System.out.println("A");
-                break;
-            case Thermometer:
-                System.out.println("T");
-                break;
-            default:
-                System.out.println("default");
-                break;
+    private boolean isEmpty;
 
-        }
+    public ActiveDevices() {
+        isEmpty = true;
     }
 
     public ArrayList<LightBulb> getLightBulbs() {
         return lightBulbs;
     }
 
+    public void addDevice(DeviceCatalog deviceType, Device device) {
+        switch (deviceType){
+            case LightBulb:
+                lightBulbs.add((LightBulb) device);
+                isEmpty = false;
+                break;
+            case AlarmClock:
 
+                break;
+            case Thermometer:
+
+                break;
+            default:
+
+                break;
+
+        }
+    }
+
+    public ArrayList<DeviceCatalog> getAvailableDevices() {
+        ArrayList<DeviceCatalog> deviceCatalogs = new ArrayList<>();
+        if(!lightBulbs.isEmpty()) {
+            deviceCatalogs.add(DeviceCatalog.LightBulb);
+        }
+
+        return deviceCatalogs;
+    }
+
+    public boolean isEmpty() {
+        return isEmpty;
+    }
 }

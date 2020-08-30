@@ -8,7 +8,7 @@ import java.util.List;
 public class UserInterface {
 
     public UserInterface(){
-        List<DeviceCatalog> deviceCatalogs = Arrays.asList(DeviceCatalog.values());
+        /*List<DeviceCatalog> deviceCatalogs = Arrays.asList(DeviceCatalog.values());
         System.out.println("Devices Available: "+Arrays.toString(deviceCatalogs.toArray()));
         System.out.println("This is the part where the user chooses what device he wants.");
         System.out.println("As of right now, we are going to assume the user wants light bulb.");
@@ -32,9 +32,9 @@ public class UserInterface {
         for(int i = 0; i < activeLightBulbs.size(); i++){
             int bulbLumen = activeLightBulbs.get(i).getLumenValue();
             //System.out.println("bL: "+bulbLumen);
-            int bulbX = activeLightBulbs.get(i).getX();
+            int bulbX = activeLightBulbs.get(i).getCoordinate().getX();
             //System.out.println("bX: "+bulbX);
-            int bulbY = activeLightBulbs.get(i).getY();
+            int bulbY = activeLightBulbs.get(i).getCoordinate().getY();
             //System.out.println("bY: "+bulbY);
             int lumen = broker.calculateLumen(userX, userY, bulbX, bulbY, bulbLumen);
             System.out.println("LA: "+lumen);
@@ -56,8 +56,6 @@ public class UserInterface {
             System.out.println("Bulb"+i+" provides "+bulbsAndLumen.get(i)+ " lumen");
         }
 
-
-
-
+         */
     }
 }
