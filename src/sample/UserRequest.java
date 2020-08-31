@@ -1,24 +1,37 @@
 package sample;
 
+import java.util.ArrayList;
+
 public class UserRequest {
 
-    public int x;
-    public int y;
-    public int lumen;
+    private ArrayList<LightBulbRequest> lightBulbRequests;
+    private boolean hasRequest;
 
-    public UserRequest(int x, int y){
-        this.x = x;
-        this.y = y;
-        this.lumen = 60;
+    public UserRequest(){
+        hasRequest = false;
+        this.lightBulbRequests = new ArrayList<>();
     }
 
-    public int getX(){
-        return x;
+    public void addDeviceRequest(DeviceCatalog deviceType, DeviceRequest deviceRequest) {
+        switch (deviceType){
+            case LightBulb:
+                lightBulbRequests.add((LightBulbRequest) deviceRequest);
+                hasRequest = true;
+                break;
+            case AlarmClock:
+
+                break;
+            case Thermometer:
+
+                break;
+            default:
+
+                break;
+
+        }
     }
 
-    public int getY(){
-        return y;
+    public ArrayList<LightBulbRequest> getLightBulbRequests() {
+        return lightBulbRequests;
     }
-
-    public int getLumen(){return lumen;}
 }

@@ -1,5 +1,6 @@
 package sample;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,9 +11,12 @@ public class Main {
     private static final int length = 500;
     private static final int width = 500;
 
-    private static ActiveDevices activeDevices = new ActiveDevices();
+    private static ActiveDevices activeDevices;
+    private static UserRequest userRequest;
 
     public static void main(String[] args) {
+        activeDevices = new ActiveDevices();
+        userRequest = new UserRequest();
         //UserInterface userInterface = new UserInterface();
         mainMenu();
 
@@ -103,11 +107,53 @@ public class Main {
             }
 
             else {
-                System.out.println(deviceCatalogs.get(num - 1) + " is selected");
+                addDeviceRequest(deviceCatalogs.get(num - 1));
             }
         }
 
     }
+
+    public static void addDeviceRequest(DeviceCatalog device) {
+        switch (device){
+            case LightBulb:
+                addLightBulbRequest();
+                break;
+            case AlarmClock:
+                System.out.println("AlarmClock unavailable at the moment");
+                System.exit(0);
+                break;
+            case Thermometer:
+                System.out.println("Thermometer unavailable at the moment");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("This device is unavailable at the moment");
+                System.exit(0);
+                break;
+
+        }
+    }
+
+    public static void addLightBulbRequest() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter request's x coordinate");
+        int xcor = scan.nextInt();
+
+        System.out.println("Please enter request's y coordinate");
+        int ycor = scan.nextInt();
+
+        System.out.println("Please enter light's intensity (lumen) request");
+        int lumen = scan.nextInt();
+
+        if(xcor > 500 || ycor > 500 || xcor < 0 || ycor < 0) {
+            System.out.println("Invalid coordinate value");
+            addLightBulbRequest();
+        }
+        LightBulbRequest lightBulbRequest = new LightBulbRequest(lumen, new Coordinate(xcor, ycor));
+        userRequest.addDeviceRequest(DeviceCatalog.LightBulb, lightBulbRequest);
+
+    }
+
 
     public static void addActiveDevice(DeviceCatalog device) {
         switch (device){
