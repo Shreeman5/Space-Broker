@@ -1,5 +1,5 @@
 package sample;
 
 public enum DeviceCatalog {
-    LightBulb, AlarmClock, Thermometer;
+    LightBulb, AlarmClock, Thermometer, Camera;
 }
