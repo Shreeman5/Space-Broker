@@ -2,8 +2,8 @@ package sample;
 
 public class LightBulb extends Device{
 
-    int lumenValue;
-    Coordinate coordinate;
+    private int lumenValue;
+    private Coordinate coordinate;
 
     public LightBulb(int lumenValue, Coordinate coordinate){
         this.lumenValue = lumenValue;
@@ -16,5 +16,9 @@ public class LightBulb extends Device{
 
     public Coordinate getCoordinate() {
         return coordinate;
+    }
+
+    public void setLumenValue(int lumenValue) {
+        this.lumenValue = lumenValue;
     }
 }

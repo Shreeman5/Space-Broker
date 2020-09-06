@@ -34,4 +34,8 @@ public class UserRequest {
     public ArrayList<LightBulbRequest> getLightBulbRequests() {
         return lightBulbRequests;
     }
+
+    public boolean hasRequest() {
+        return hasRequest;
+    }
 }

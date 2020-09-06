@@ -16,10 +16,11 @@ public class UserInterface {
     private  UserRequest userRequest;
     private Scanner scan;
     private boolean programRunningStatus;
+    private Solutions solutions;
 
     public UserInterface(int length, int width, ActiveDevices activeDevices,
                          UserRequest userRequest, AlgorithmCatalog algorithmCatalog,
-                         Scanner scan, boolean programRunningStatus){
+                         Scanner scan, boolean programRunningStatus, Solutions solutions){
         this.length = length;
         this.width = width;
         this.activeDevices = activeDevices;
@@ -27,6 +28,7 @@ public class UserInterface {
         this.algorithmCatalog = algorithmCatalog;
         this.scan = scan;
         this.programRunningStatus = programRunningStatus;
+        this.solutions = solutions;
     }
 
     public void startProgram() {
@@ -191,8 +193,7 @@ public class UserInterface {
                 mainMenu();
                 break;
             case 4:
-                System.exit(0);
-                break;
+                return;
             default:
                 postAlgorithmSelectionMenu();
                 break;
