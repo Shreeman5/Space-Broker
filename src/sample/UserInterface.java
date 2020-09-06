@@ -14,13 +14,19 @@ public class UserInterface {
 
     private  ActiveDevices activeDevices;
     private  UserRequest userRequest;
+    private Scanner scan;
+    private boolean programRunningStatus;
 
-    public UserInterface(int length, int width, ActiveDevices activeDevices, UserRequest userRequest, AlgorithmCatalog algorithmCatalog){
+    public UserInterface(int length, int width, ActiveDevices activeDevices,
+                         UserRequest userRequest, AlgorithmCatalog algorithmCatalog,
+                         Scanner scan, boolean programRunningStatus){
         this.length = length;
         this.width = width;
         this.activeDevices = activeDevices;
         this.userRequest = userRequest;
         this.algorithmCatalog = algorithmCatalog;
+        this.scan = scan;
+        this.programRunningStatus = programRunningStatus;
     }
 
     public void startProgram() {
@@ -28,7 +34,8 @@ public class UserInterface {
     }
 
     private void mainMenu(){
-        Scanner scan = new Scanner(System.in);
+        int num;
+        scan = new Scanner(System.in);
         System.out.println("-------------Welcome to the Space Broker--------------");
         System.out.println("Please select 1 to go to terminal view");
         System.out.println("Please select 2 to add file configuration");
@@ -36,7 +43,12 @@ public class UserInterface {
         System.out.println("Please select 4 to go to scheduler");
         System.out.println("------------------------------------------------------");
         System.out.println("");
-        int num = scan.nextInt();
+
+        if(scan.hasNextInt() )
+            num = scan.nextInt();
+        else
+            num = 0;
+
         switch (num) {
             case 1:
                 terminalView();
@@ -48,16 +60,14 @@ public class UserInterface {
                 //GUI Init
                 break;
             case 4:
-                scan.close();
                 return;
             default:
                 mainMenu();
         }
-        scan.close();
     }
 
     private void terminalView() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("Please select 1 to add a device");
         System.out.println("Please select 2 to see the list of active devices");
         System.out.println("Please select 3 to see list of algorithms");
@@ -83,7 +93,6 @@ public class UserInterface {
             default:
                 terminalView();
         }
-        scan.close();
     }
 
     private void getListOfActiveDevices() {
@@ -96,7 +105,7 @@ public class UserInterface {
             mainMenu();
         }
         else {
-            Scanner scan = new Scanner(System.in);
+            scan = new Scanner(System.in);
             System.out.println("Select algorithm from the following devices");
             ArrayList<DeviceCatalog> deviceCatalogs = activeDevices.getAvailableDevices();
             int size = deviceCatalogs.size();
@@ -145,7 +154,7 @@ public class UserInterface {
         for(int i = 0; i < size; i++) {
             System.out.println(i + 1 + ") " + algorithms.get(i));
         }
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("Please select algorithm's number");
         int num = scan.nextInt();
 
@@ -161,7 +170,7 @@ public class UserInterface {
     }
 
     private void postAlgorithmSelectionMenu() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("-----------------------------------------------------");
         System.out.println("Please select 1 to add another algorithm");
         System.out.println("Please select 2 to go to terminal view");
@@ -196,7 +205,7 @@ public class UserInterface {
             mainMenu();
         }
         else {
-            Scanner scan = new Scanner(System.in);
+            scan = new Scanner(System.in);
             System.out.println("Select device from here");
             ArrayList<DeviceCatalog> deviceCatalogs = activeDevices.getAvailableDevices();
             int size = deviceCatalogs.size();
@@ -240,7 +249,7 @@ public class UserInterface {
     }
 
     private void addLightBulbRequest() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("Please enter request's x coordinate");
         int xcor = scan.nextInt();
 
@@ -262,7 +271,7 @@ public class UserInterface {
 
 
     private void selectDevice() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("Select device from here");
         List<DeviceCatalog> deviceCatalogs = Arrays.asList(DeviceCatalog.values());
         int size = deviceCatalogs.size();
@@ -305,7 +314,7 @@ public class UserInterface {
     }
 
     private  void addLightBulbMenu() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("Please enter light's x coordinate");
         int length = scan.nextInt();
 
@@ -338,7 +347,7 @@ public class UserInterface {
     }
 
     private void postDeviceSelectionMenu() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("-----------------------------------------------------");
         System.out.println("Please select 1 to add another device");
         System.out.println("Please select 2 to go to terminal view");
@@ -359,8 +368,7 @@ public class UserInterface {
                 mainMenu();
                 break;
             case 4:
-                System.exit(0);
-                break;
+                return;
             default:
                 postDeviceSelectionMenu();
                 break;
@@ -368,7 +376,7 @@ public class UserInterface {
     }
 
     private void postRequestSelectionMenu() {
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("-----------------------------------------------------");
         System.out.println("Please select 1 to make another request");
         System.out.println("Please select 2 to go to terminal view");
@@ -389,8 +397,7 @@ public class UserInterface {
                 mainMenu();
                 break;
             case 4:
-                System.exit(0);
-                break;
+                return;
             default:
                 postRequestSelectionMenu();
                 break;
