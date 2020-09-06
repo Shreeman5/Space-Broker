@@ -1,4 +1,9 @@
-package sample;
+package Scheduler;
+
+import Device.ActiveDevices;
+import Request.UserRequest;
+import Algorithm.AlgorithmCatalog;
+import Solution.Solutions;
 
 import java.util.ArrayList;
 
@@ -7,8 +12,8 @@ public class Broker {
 
     private int width;
 
-    private  ActiveDevices activeDevices;
-    private  UserRequest userRequest;
+    private ActiveDevices activeDevices;
+    private UserRequest userRequest;
     private AlgorithmCatalog algorithmCatalog;
     private Solutions solutions;
 

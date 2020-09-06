@@ -1,4 +1,4 @@
-package sample;
+package Extras;
 
 public class Coordinate {
     private int x;

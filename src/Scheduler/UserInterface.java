@@ -1,4 +1,13 @@
-package sample;
+package Scheduler;
+
+import Device.ActiveDevices;
+import Request.LightBulbRequest;
+import Request.UserRequest;
+import Algorithm.AlgorithmCatalog;
+import Extras.Coordinate;
+import Solution.Solutions;
+import Device.DeviceCatalog;
+import Device.LightBulb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,8 +21,8 @@ public class UserInterface {
 
     private int width;
 
-    private  ActiveDevices activeDevices;
-    private  UserRequest userRequest;
+    private ActiveDevices activeDevices;
+    private UserRequest userRequest;
     private Scanner scan;
     private boolean programRunningStatus;
     private Solutions solutions;

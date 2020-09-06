@@ -1,4 +1,6 @@
-package sample;
+package Request;
+
+import Device.DeviceCatalog;
 
 import java.util.ArrayList;
 

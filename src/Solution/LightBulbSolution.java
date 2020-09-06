@@ -1,6 +1,9 @@
-package sample;
+package Solution;
 
-public class LightBulbSolution extends Solution{
+import Device.Device;
+import Device.DeviceCatalog;
+
+public class LightBulbSolution extends Solution {
     private int lumenIncrement;
 
     public LightBulbSolution(String algoName, DeviceCatalog deviceType, Device device, int lumenIncrement) {

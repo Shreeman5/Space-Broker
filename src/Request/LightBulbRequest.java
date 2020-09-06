@@ -1,6 +1,8 @@
-package sample;
+package Request;
 
-public class LightBulbRequest extends  DeviceRequest{
+import Extras.Coordinate;
+
+public class LightBulbRequest extends DeviceRequest {
     private int lumen;
 
     private Coordinate coordinate;

@@ -1,4 +1,7 @@
-package sample;
+package Solution;
+
+import Device.Device;
+import Device.DeviceCatalog;
 
 public class Solution {
     private String algoName;

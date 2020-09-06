@@ -1,4 +1,6 @@
-package sample;
+package Device;
+
+import Extras.Coordinate;
 
 public class LightBulb extends Device{
 

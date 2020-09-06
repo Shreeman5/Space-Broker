@@ -1,4 +1,9 @@
-package sample;
+package Scheduler;
+
+import Device.ActiveDevices;
+import Request.UserRequest;
+import Algorithm.AlgorithmCatalog;
+import Solution.Solutions;
 
 import java.util.Scanner;
 

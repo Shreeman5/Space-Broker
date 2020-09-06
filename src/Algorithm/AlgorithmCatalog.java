@@ -1,4 +1,11 @@
-package sample;
+package Algorithm;
+
+import Device.ActiveDevices;
+import Request.UserRequest;
+import Solution.LightBulbSolution;
+import Solution.Solutions;
+import Device.LightBulb;
+import Device.DeviceCatalog;
 
 import java.util.ArrayList;
 
@@ -6,8 +13,8 @@ public class AlgorithmCatalog {
 
     private  int length;
     private int width;
-    private  ActiveDevices activeDevices;
-    private  UserRequest userRequest;
+    private ActiveDevices activeDevices;
+    private UserRequest userRequest;
 
     private ArrayList<String> lightBulbAlgorithms;
     private ArrayList<String> selectedLightBulbAlgorithms;

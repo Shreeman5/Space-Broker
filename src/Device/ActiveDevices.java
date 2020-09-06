@@ -1,4 +1,6 @@
-package sample;
+package Device;
+
+import Device.Device;
 
 import java.util.ArrayList;
 
