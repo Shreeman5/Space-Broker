@@ -30,8 +30,7 @@ public class Main {
                 userRequest, algorithmCatalog, scan, programRunningStatus, solutions);
         Broker broker = new Broker(length, width, activeDevices, userRequest,
                 algorithmCatalog, solutions);
-        FileConfig file = new FileConfig("config.txt", length, width, activeDevices);
-
+        FileConfig file = new FileConfig("config.txt", length, width, activeDevices, userRequest, algorithmCatalog);
         file.readFile();
 
 

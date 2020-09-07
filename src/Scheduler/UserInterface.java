@@ -154,7 +154,6 @@ public class UserInterface {
                 System.out.println("This device is unavailable at the moment");
                 System.exit(0);
                 break;
-
         }
     }
 
