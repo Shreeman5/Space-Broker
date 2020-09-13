@@ -20,6 +20,13 @@ public class Main {
     private static Solutions solutions;
 
     public static void main(String[] args) {
+
+        CreateJSONFile createJSONFile = new CreateJSONFile();
+        ReadJSONFile readJSONFile = new ReadJSONFile();
+        System.exit(0);
+
+
+
         solutions = new Solutions();
         programRunningStatus = true;
         activeDevices = new ActiveDevices();
